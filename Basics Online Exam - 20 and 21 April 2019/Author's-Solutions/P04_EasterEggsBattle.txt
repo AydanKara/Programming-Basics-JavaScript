@@ -1,0 +1,50 @@
+﻿using System;
+
+namespace P04_EasterEggsBattle
+{
+    class P04_EasterEggsBattle
+    {
+        static void Main(string[] args)
+        {
+            int countEggs1 = int.Parse(Console.ReadLine());
+            int countEggs2 = int.Parse(Console.ReadLine());
+
+            //докато: End или яйцата на някого свършат
+
+            int points1 = 0;
+            int points2 = 0;
+            String winner = Console.ReadLine();
+
+            while (winner != "End of battle")
+            {
+                if (winner == "one")
+                {
+                    countEggs2--;
+                }
+                else if (winner == "two")
+                {
+                    countEggs1--;
+                }
+
+                if (countEggs1 == 0)
+                {
+                    Console.WriteLine($"Player one is out of eggs. Player two has {countEggs2} eggs left.");
+                    break;
+                }
+                else if (countEggs2 == 0)
+                {
+                    Console.WriteLine($"Player two is out of eggs. Player one has {countEggs1} eggs left.");
+                    break;
+                }
+
+                winner = Console.ReadLine();
+            }
+
+            if (winner == "End of battle")
+            {
+                Console.WriteLine($"Player one has {countEggs1} eggs left.");
+                Console.WriteLine($"Player two has {countEggs2} eggs left.");
+            }
+        }
+    }
+}

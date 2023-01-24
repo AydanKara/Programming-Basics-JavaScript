@@ -1,0 +1,28 @@
+﻿using System;
+
+namespace P01_EasterLunch
+{
+    class P01_EasterLunch
+    {
+        static void Main(string[] args)
+        {
+            int countKozunatsi = int.Parse(Console.ReadLine()); //брой козунаци
+            int countBoxEggs = int.Parse(Console.ReadLine()); //брой кори яйца (1 кора -> 12 яйца)
+            int kgBiscuits = int.Parse(Console.ReadLine()); // кг курабии
+
+            double pricePainterEggs = countBoxEggs * 12 * 0.15; // цена за боя
+
+            //цена на един козунак 3.20
+            //цена 1 кора яйца -> 4.35
+            //цена за 1 кг курабии -> 5.40
+
+            double priceKozunatsi = countKozunatsi * 3.20;
+            double priceEggs = countBoxEggs * 4.35;
+            double priceBiscuits = kgBiscuits * 5.40;
+
+            double totalPrice = priceKozunatsi + priceEggs + priceBiscuits + pricePainterEggs;
+
+            Console.WriteLine($"{totalPrice:F2}");
+        }
+    }
+}
